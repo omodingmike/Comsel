@@ -67,47 +67,6 @@
             }
 
 
-//            $exclude_ple_results = ['ple_mtc_results', 'ple_science_results', 'ple_eng_results', 'ple_sst_results'];
-//            $results             = [];
-//            $uceResults          = [];
-//            $post                = [];
-
-//            foreach (Arr::except($request, $exclude_ple_results) as $subject => $grade) {
-//                echo UceSubject::where('user_id', '=', Auth::user()->id)->first()->$subject . ' ' . $grade;
-//                echo '<br>';
-//                $post[] = UceSubject::where('user_id', '=', Auth::user()->id)->first()->$subject;
-//                if ($subject !== '')
-//                    $subj = UceSubject::where('user_id', '=', Auth::user()->id)->first()->$subject;
-//                UceResult::where('user_id', '=', Auth::user()->id)
-//                    ->update([
-//                        "${subj}" => $grade
-//                    ]);
-//            }
-//            foreach (Schema::getColumnListing('uce_results') as $col) {
-//                if (!(in_array($col, $excluded))) {
-//                    UceResult::where('user_id', '=', Auth::user()->id)
-//                        ->update([
-//                            "${col}" => 0
-//                        ]);
-//                    foreach ($request as $k => $v) {
-//                        foreach (Subjects::fetch_all() as $key => $value) {
-//                            $column = Clean::subject($value);
-//                            if (!empty($column) and strlen($column) !== 1) {
-//                                if ($column === strtolower($k)) {
-//                                    UceResult::where('user_id', '=', Auth::user()->id)
-//                                        ->update([
-//                                            "${column}" => $v
-//                                        ]);
-//
-//                                    $results["${column}"] = $v;
-//                                }
-//                            }
-//                        }
-//                    }
-//
-//                }
-//            }
-
             // calculate uce aggregates
             $grades     = [];
             $aggregates = 0;
